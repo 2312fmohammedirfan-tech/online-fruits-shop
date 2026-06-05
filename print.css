@@ -1,0 +1,114 @@
+/* print.css - Dedicated Styles for Invoice Printing */
+
+@media print {
+    /* Hide everything except the print section */
+    body * {
+        visibility: hidden;
+    }
+    #print-section, #print-section * {
+        visibility: visible;
+    }
+    #print-section {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+    }
+
+    /* Reset global styles for paper */
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    .invoice-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #eee;
+        box-shadow: none;
+        font-size: 14px;
+        line-height: 24px;
+        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color: #555;
+    }
+
+    .invoice-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid var(--primary, #2ecc71);
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+
+    .invoice-logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #27ae60;
+    }
+
+    .invoice-details h2 {
+        margin: 0;
+        color: #333;
+    }
+
+    .invoice-address-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+    }
+
+    .address-col {
+        width: 45%;
+    }
+
+    .invoice-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+    }
+
+    .invoice-table th {
+        background: #f9f9f9;
+        border-bottom: 1px solid #eee;
+        padding: 12px;
+        text-align: left;
+    }
+
+    .invoice-table td {
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .invoice-total {
+        text-align: right;
+        margin-top: 30px;
+    }
+
+    .total-row {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        border-top: 2px solid #eee;
+        padding-top: 10px;
+    }
+
+    .invoice-footer {
+        margin-top: 50px;
+        text-align: center;
+        font-style: italic;
+        color: #999;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+    }
+}
+
+/* Hide print section on screen */
+@media screen {
+    .print-only {
+        display: none;
+    }
+}
